@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Flower Class Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+
+    	<input type="text" name="department" placeholder="department" required="required" />
+      <input type="text" name="region" placeholder="region" required="required" />
+		  <input type="text" name="education" placeholder="education" required="required" />
+		  <input type="text" name="gender" placeholder="gender" required="required" />
+      <input type="text" name="recruitment_channel" placeholder="recruitment_channel" required="required" />
+      <input type="text" name="no_of_trainings" placeholder="no_of_trainings" required="required" />
+      <input type="text" name="age" placeholder="age" required="required" />
+      <input type="text" name="previous_year_rating" placeholder="previous_year_rating" required="required" />
+      <input type="text" name="length_of_service" placeholder="length_of_service" required="required" />
+      <input type="text" name="KPIs_met >80%" placeholder="KPIs_met >80%" required="required" />
+      <input type="text" name="awards_won" placeholder="awards_won" required="required" />
+      <input type="text" name="avg_training_score" placeholder="avg_training_score" required="required" />
+       
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
